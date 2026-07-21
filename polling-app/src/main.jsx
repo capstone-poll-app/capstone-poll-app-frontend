@@ -6,9 +6,8 @@ import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-  <BrowserRouter>
-  <AppRoutes />
-</BrowserRouter>
-
+    <BrowserRouter>
+      <AppRoutes></AppRoutes>
+    </BrowserRouter>
   </StrictMode>
 )
