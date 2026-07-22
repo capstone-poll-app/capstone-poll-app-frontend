@@ -12,9 +12,9 @@ function AppRoutes() {
         <>
         <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/polls/:id" element={<Poll />} /> */}
             <Route path="/polls/new" element={<CreatePoll />} />
-            {/* <Route path="/polls/result" element={<Result />} /> */}
+            {/* <Route path="/polls/:id" element={<Poll />} />
+            <Route path="/polls/result" element={<Result />} /> */}
         </Routes>
         </>
     )
