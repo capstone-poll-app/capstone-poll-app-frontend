@@ -18,7 +18,7 @@ function CreatePoll() {
         setOptions(newOptions)
     }
 
-    //adding boxes until it hits maximum of 6 boxes 
+    //adding boxes until it hits maximum of 5 boxes 
     function addOption() {
         if (options.length < 5) {
             setOptions([...options, ""])
