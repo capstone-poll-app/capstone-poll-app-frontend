@@ -43,7 +43,7 @@ function CreatePoll() {
         setFormError("")
 
         try {
-            const response = await fetch("http://localhost:3000/polls", {
+            const response = await fetch("/polls", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ title, description, options: nonEmptyOptions }),
