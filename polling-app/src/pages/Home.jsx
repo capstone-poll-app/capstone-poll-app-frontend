@@ -32,7 +32,6 @@ function Home() {
     return (
         <>
             <Navbar />
-<<<<<<< HEAD
             <div className="app">
                 <h1>Polling App</h1>
 
@@ -51,22 +50,6 @@ function Home() {
                             )}
                         </ul>
                     )}
-=======
-            <div className="app" >
-                <h1>Polling App</h1>
-
-                <section className="card">
-                    <ul className="poll-list" >
-                        {polls.map((poll) => {
-                            <li className="poll-item" key={poll.id}>
-                                <p className="poll-title">{poll.title}</p>
-                                <p className="poll-description">{poll.description}</p>
-                                {/* <Link to {`/polls/${poll.id}`}>Link to Polls</Link> */}
-                            </li>
-                        })}
-                    </ul>
-
->>>>>>> 75cf9be ("commit")
                 </section>
             </div>
         </>
