@@ -7,11 +7,14 @@ function PollCard({ poll, deletePoll }) {
         <li className="poll-item">
             <p className="poll-title">{poll.title}</p>
             <p className="poll-description">{poll.description}</p>
-            <section>
+            <section className="container">
+                <Link className="link-button" to={`/polls/${poll.id}`}>View Poll</Link>
                 <button
                     type="button"
+                    className="dlt-button"
                     onClick={() => deletePoll(poll.id)}
-                    className="link-button">Delete Poll</button>
+                    >Delete Poll
+                 </button>
                 <Link className="link-button" to={`/polls/${poll.id}`}>View Poll</Link>
             </section>
 

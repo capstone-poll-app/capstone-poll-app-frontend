@@ -52,6 +52,12 @@
   background-color: #C9D6EA;
   min-height: 100vh;
 }
+.app h1 {
+  padding-top: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
 .app .poll-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -137,6 +143,10 @@
 .add-option-btn,
 .submit-btn {
   text-decoration: none;
+.app .poll-item .dlt-button {
+  text-decoration: none;
+  border: 0;
+  padding: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -154,6 +164,9 @@
 }
 .add-option-btn:hover,
 .submit-btn:hover {
+  transform: translateY(1px);
+}
+.app .poll-item .dlt-button:hover {
   background-color: #C4B7CB;
   text-decoration: none;
   color: #1F487E;
@@ -247,4 +260,16 @@
 .poll-card .vote-btn:focus-visible {
   outline: 2px solid #93c5fd;
   outline-offset: 2px;
+}/*# sourceMappingURL=styles.css.map */
+.app .poll-item .dlt-button:active {
+  transform: scale(0.98);
+}
+.app .poll-item .dlt-button:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+.app .poll-item .container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }/*# sourceMappingURL=styles.css.map */
