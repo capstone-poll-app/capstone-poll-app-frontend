@@ -14,11 +14,11 @@ function PollCard({ poll }) {
             >View Poll
             </button>
 
-            <button 
-            type="button"
-            onClick={() => Navigate(`/polls/${poll.id}`)}
-            className="delete-btn">Delete Poll</button>
-            {/* <Link to={`/polls/${poll.id}`}>View Poll</Link>  */}
+            <button
+                type="button"
+                onClick={() => Navigate(`/polls/${poll.id}`)}
+                className="link-button">Delete Poll</button>
+            <Link className="link-button" to={`/polls/${poll.id}`}>View Poll</Link>
         </li>
     );
 }

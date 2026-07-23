@@ -1,0 +1,46 @@
+.app{
+    background-color: #C9D6EA;
+    min-height: 95vh;
+
+    .poll-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 1.5rem;
+
+        padding: 2rem;
+    }
+       
+    .poll-item{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        align-items: center;
+        justify-content: center;
+
+        min-height: 10vh;
+        background-color: #1F487E;
+        border-radius: 20px;
+
+        padding: 1.5rem;
+
+        .poll-title{
+                    font-size: 1.5rem;
+                    color: #C9D6EA;
+
+
+                    
+                }
+
+        &:hover{
+            border: 2px solid;
+            background-color: #1f487ec4;
+
+            .poll-title{
+                color: black;
+            }
+        }
+
+
+    }
+}
