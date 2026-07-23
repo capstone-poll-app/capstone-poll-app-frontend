@@ -12,15 +12,29 @@ function Results() {
     useEffect(() => {
         async function fetchResults() {
             try {
-                const response = await fetch(`/polls/${id}`)
+                const pollResponse = await fetch(`/polls/${id}`)
 
-                if (!response.ok) {
-                    throw new Error(`Server responded with ${response.status}`)
+                if (!pollResponse.ok) {
+                    throw new Error(`Server responded with ${pollResponse.status}`)
                 }
 
-                const data = await response.json()
+                const pollData = await pollResponse.json()
 
-                setPoll(data)
+                for (let i = 0; i < pollData.options.length; i++) {
+                    const option = pollData.options[i]
+
+                    const optionResponse = await fetch(`/polls/${id}/${option.id}`)
+
+                    if (!optionResponse.ok) {
+                        throw new Error(`Server responded with ${optionResponse.status}`)
+                    }
+
+                    const optionData = await optionResponse.json()
+
+                    option.voteCount = optionData.Votes.length
+                }
+
+                setPoll(pollData)
             }
             catch (err) {
                 console.error("Failed to fetch results:", err)
