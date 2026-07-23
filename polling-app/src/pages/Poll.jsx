@@ -81,7 +81,7 @@ function Poll() {
           {poll.description && <p>{poll.description}</p>}
           <ul>
             {poll.Options.map((option) => (
-              <li className="option-item" key={option.id}>
+              <ul className="vote-option" key={option.id}>
                 <label>
                   <input
                     type="radio"
@@ -95,10 +95,10 @@ function Poll() {
                   />
                   {option.text}
                 </label>
-              </li>
+              </ul>
             ))}
           </ul>
-          <button type="submit" className="submit-btn" onClick={handleVote}>Vote</button>
+          <button type="submit" className="vote-btn" onClick={handleVote}>Vote</button>
         </section>
       </div>
     </>

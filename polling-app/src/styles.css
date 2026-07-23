@@ -121,7 +121,7 @@
   color: black;
 }
 
-.poll-card {
+.create-poll-card {
   background-color: #1F487E;
   border: 1px solid #7B9BCC;
   border-radius: 6px;
@@ -241,6 +241,116 @@
 
 .add-option-btn:focus-visible,
 .submit-btn:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.poll-card {
+  background-color: #1F487E;
+  border: 1px solid #7B9BCC;
+  border-radius: 6px;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.poll-card h2 {
+  margin: 1rem 0;
+  color: #C9D6EA;
+  font-size: 24px;
+}
+
+.poll-card p {
+  margin: 1rem 0;
+  color: #C9D6EA;
+  opacity: 0.85;
+}
+
+.poll-card .vote-option {
+  border: 1px solid #7B9BCC;
+  border-radius: 6px;
+  background-color: #C9D6EA;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+  margin: 0.5rem 0;
+}
+
+.poll-card .vote-option label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  color: #1F487E;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.poll-card .vote-option input[type="radio"] {
+  accent-color: #1F487E;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.poll-card .vote-option:hover {
+  background-color: #b7c8e6;
+}
+
+.poll-card .vote-option:hover label {
+  color: #ffffff;
+}
+
+.poll-card .vote-btn {
+  margin-top: 0.6rem;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.5em;
+  padding: 0.6em 1.2em;
+  color: white;
+  background-color: #7B9BCC;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  -webkit-transition: background-color 0.2s ease, -webkit-transform 0.1s ease;
+  transition: background-color 0.2s ease, -webkit-transform 0.1s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease, -webkit-transform 0.1s ease;
+}
+
+.poll-card .vote-btn:hover {
+  background-color: #C4B7CB;
+  color: #1F487E;
+}
+
+.poll-card .vote-btn:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.poll-card .vote-btn:focus-visible {
   outline: 2px solid #93c5fd;
   outline-offset: 2px;
 }
