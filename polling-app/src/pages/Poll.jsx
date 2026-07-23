@@ -17,11 +17,10 @@ function Poll() {
       setError("Please select an option.");
       return;
     }
-    return console.log(selectedOption);
     console.log(selectedOption);
     try {
       // sending the selected option to the server
-      const response = await fetch(`http://localhost:3000/polls/${id}/vote`, {
+      const response = await fetch(`http://localhost:3000/polls/${id}/${selectedOption}`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({
@@ -32,7 +31,7 @@ function Poll() {
         throw new Error(`Server responded with ${response.status}`);
       }
 
-      navigate("/");
+      navigate(`/polls/result/${id}`);
     } catch (err) {
       setError("Failed to submit the vote");
     }
