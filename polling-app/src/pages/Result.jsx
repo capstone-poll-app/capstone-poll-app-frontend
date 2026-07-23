@@ -12,7 +12,7 @@ function Results() {
     useEffect(() => {
         async function fetchResults() {
             try {
-                const pollResponse = await fetch(`/polls/${id}`)
+                const pollResponse = await fetch(`http://localhost:3000//polls/${id}`)
 
                 if (!pollResponse.ok) {
                     throw new Error(`Server responded with ${pollResponse.status}`)
@@ -23,7 +23,7 @@ function Results() {
                 for (let i = 0; i < pollData.options.length; i++) {
                     const option = pollData.options[i]
 
-                    const optionResponse = await fetch(`/polls/${id}/${option.id}`)
+                    const optionResponse = await fetch(`http://localhost:3000//polls/${id}/${option.id}`)
 
                     if (!optionResponse.ok) {
                         throw new Error(`Server responded with ${optionResponse.status}`)
