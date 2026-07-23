@@ -29,7 +29,7 @@ function Home() {
 
   useEffect(() => {
     fetchPolls();
-  }, [fetchPolls]);
+  }, []);
 
   async function deletePoll(id) {
     try {
