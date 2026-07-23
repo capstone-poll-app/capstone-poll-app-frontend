@@ -29,6 +29,14 @@ function Home() {
         fetchPolls();
     }, []);
 
+    async function deletePoll(id) {
+        try {
+
+        } catch (error) {
+
+        }
+    }
+
     return (
         <>
             <Navbar />
