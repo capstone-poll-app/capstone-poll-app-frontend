@@ -16,7 +16,7 @@ function Poll() {
       setError("Please select an option.");
       return;
     }
-    console.log(selectedOption);
+    return console.log(selectedOption);
   }
 
   useEffect(() => {
@@ -61,16 +61,16 @@ function Poll() {
           <h2>{poll.title}</h2>
           <p>{poll.description}</p>
           <ul>
-            {poll.Options.map((option, i) => (
-              <li className="option-item" key={i}>
+            {poll.Options.map((option) => (
+              <li className="option-item" key={option.id}>
                 <label>
                   <input
                     type="radio"
                     name="pollOption"
-                    value={option.text}
-                    checked={selectedOption === option.text}
+                    value={option.id}
+                    checked={selectedOption?.id === option.id}
                     onChange={() => {
-                      setSelectedOption(option.text);
+                      setSelectedOption(option);
                       setError("");
                     }}
                   />
