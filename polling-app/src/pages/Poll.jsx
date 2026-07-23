@@ -74,7 +74,7 @@ function Poll() {
         <Navbar />
         <h1>Poll</h1>
 
-        <section className="card">
+        <section className="poll-card">
           {error && <p className="error">{error}</p>}
 
           <h2>{poll.title}</h2>
@@ -98,7 +98,7 @@ function Poll() {
               </li>
             ))}
           </ul>
-          <button onClick={handleVote}>Vote</button>
+          <button type="submit" className="submit-btn" onClick={handleVote}>Vote</button>
         </section>
       </div>
     </>
