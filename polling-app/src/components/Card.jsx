@@ -5,7 +5,7 @@ function PollCard({ poll }) {
         <li className="poll-item">
             <p className="poll-title">{poll.title}</p>
             <p className="poll-description">{poll.description}</p>
-            <Link to={`/polls/${poll.id}`}>View Poll</Link>
+            <Link className="link-button" to={`/polls/${poll.id}`}>View Poll</Link>
         </li>
     );
 }
