@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import Navbar from "../components/Navbar";
 import Poll from "./Poll";
+import { Link } from "react-router";
 
 function SharePoll () {
     const { id } = useParams();
@@ -24,7 +25,7 @@ function SharePoll () {
        </button>
 
 <br></br>
-       <button onClick={() => {Poll}} >Go to Poll</button>
+       <Link className="link-button" to={`/polls/${id}`}>Take Poll</Link>
         
         </>
     )
