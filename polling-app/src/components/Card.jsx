@@ -1,8 +1,7 @@
 import { Link } from "react-router";
 import { useNavigate } from "react-router";
 
-
-function PollCard({ poll }) {
+function PollCard({ poll, deletePoll }) {
     const Navigate = useNavigate();
     return (
         <li className="poll-item">
@@ -12,9 +11,11 @@ function PollCard({ poll }) {
                 <Link className="link-button" to={`/polls/${poll.id}`}>View Poll</Link>
                 <button
                     type="button"
-                    onClick={() => Navigate(`/polls/${poll.id}`)}
-                    className="dlt-button">Delete Poll
-                </button>
+                    className="dlt-button"
+                    onClick={() => deletePoll(poll.id)}
+                    >Delete Poll
+                 </button>
+                <Link className="link-button" to={`/polls/${poll.id}`}>View Poll</Link>
             </section>
 
         </li>

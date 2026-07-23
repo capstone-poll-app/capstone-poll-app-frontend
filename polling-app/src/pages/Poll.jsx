@@ -73,14 +73,14 @@ function Poll() {
         <Navbar />
         <h1>Poll</h1>
 
-        <section className="card">
+        <section className="poll-card">
           {error && <p className="error">{error}</p>}
 
           <h2>{poll.title}</h2>
           {poll.description && <p>{poll.description}</p>}
           <ul>
             {poll.Options.map((option) => (
-              <li className="option-item" key={option.id}>
+              <ul className="vote-option" key={option.id}>
                 <label>
                   <input
                     type="radio"
@@ -94,10 +94,10 @@ function Poll() {
                   />
                   {option.text}
                 </label>
-              </li>
+              </ul>
             ))}
           </ul>
-          <button onClick={handleVote}>Vote</button>
+          <button type="submit" className="vote-btn" onClick={handleVote}>Vote</button>
         </section>
       </div>
     </>
