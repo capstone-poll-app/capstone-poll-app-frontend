@@ -31,7 +31,7 @@ function Poll() {
         throw new Error(`Server responded with ${response.status}`);
       }
 
-      navigate(`/polls/result/${id}`);
+      navigate(`/polls/${id}/result`);
     } catch (err) {
       setError("Failed to submit the vote");
     }

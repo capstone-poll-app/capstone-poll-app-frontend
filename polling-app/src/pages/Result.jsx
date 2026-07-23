@@ -33,10 +33,15 @@ function Results() {
   }, [id]);
 
 
-  function createContent(num){
+  function createContent(options){
     return(
         <>
             <ol className="bar-chart">
+              {options.map((option)=>(
+                <li className="bar">{option.text}
+                  <p>{option.Votes.length}</p>
+                </li>
+              ))}
                 
             </ol>
         </>
@@ -51,7 +56,7 @@ function Results() {
   } else if (error) {
     return <p className="error">Error: {error}</p>;
   }else if(poll){
-    content = createContent(poll.Options.length)
+    content = createContent(poll.Options)
   }
 
 
@@ -59,7 +64,7 @@ function Results() {
   return (
     <div className="app">
       <Navbar />
-      <section className="card">{poll.Options.length}</section>
+      <section className="card">{content}</section>
     </div>
   );
 }
