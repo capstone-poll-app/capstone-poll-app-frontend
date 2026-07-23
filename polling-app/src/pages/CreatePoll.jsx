@@ -18,7 +18,7 @@ function CreatePoll() {
         setOptions(newOptions)
     }
 
-    //adding boxes until it hits maximum of 6 boxes 
+    //adding boxes until it hits maximum of 5 boxes 
     function addOption() {
         if (options.length < 5) {
             setOptions([...options, ""])
@@ -43,7 +43,7 @@ function CreatePoll() {
         setFormError("")
 
         try {
-            const response = await fetch("/polls", {
+            const response = await fetch("http://localhost:3000/polls", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ title, description, options: nonEmptyOptions }),
@@ -65,7 +65,7 @@ function CreatePoll() {
             <Navbar />
             <h1>Create a Poll</h1>
 
-            <section className="card">
+            <section className="poll-card">
                 <form className="poll-form" onSubmit={handleSubmit}>
                     {formError && <p className="error">{formError}</p>}
 
