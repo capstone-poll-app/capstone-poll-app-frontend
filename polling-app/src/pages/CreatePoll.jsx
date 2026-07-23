@@ -65,7 +65,7 @@ function CreatePoll() {
             <Navbar />
             <h1>Create a Poll</h1>
 
-            <section className="poll-card">
+            <section className="create-poll-card">
                 <form className="poll-form" onSubmit={handleSubmit}>
                     {formError && <p className="error">{formError}</p>}
 
