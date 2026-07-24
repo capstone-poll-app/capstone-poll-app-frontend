@@ -73,6 +73,7 @@ function Results() {
     <div className="app">
       <Navbar />
       <span className="result">
+        <h1 className="win-text">{poll.title}</h1>
         <h2 className="win-text">The Winner is: {winner.text}</h2>
         <>{content}</>
       </span>
