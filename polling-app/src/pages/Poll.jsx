@@ -13,14 +13,10 @@ function Poll() {
   const [error, setError] = useState("");
   const [selectedOption, setSelectedOption] = useState(null);
 
-  async function handleVote() {
-    if (!selectedOption) {
-      setError("Please select an option.");
-      return;
-    }
-    console.log(selectedOption);
+  async function handleVote(id, selectedOption) {
     try {
       // sending the selected option to the server
+      console.log("before_fetch")
       const response = await fetch(`http://localhost:3000/polls/${id}/${selectedOption}`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
