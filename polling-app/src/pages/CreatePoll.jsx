@@ -52,8 +52,11 @@ function CreatePoll() {
             if (!response.ok) {
                 throw new Error(`Server responded with ${response.status}`)
             }
+            const data = await response.json()
+            console.log("The reponse id is:", data.id)
+            navigate(`/polls/${data.id}/share`)
 
-            navigate("/")
+            // navigate("/")
         } catch (err) {
             console.error("Failed to create poll:", err)
             setFormError("Failed to create poll. Please try again.")
