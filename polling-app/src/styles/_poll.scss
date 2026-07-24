@@ -18,6 +18,10 @@
     opacity: 0.85;
   }
 
+  ul{
+    list-style: none;
+  }
+
   .vote-option {
     border: 1px solid #7B9BCC;
     border-radius: 6px;
@@ -72,6 +76,56 @@
     border-radius: 6px;
     font-weight: 500;
     font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+
+    &:hover {
+      background-color: #C4B7CB;
+      color: #1F487E;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #93c5fd;
+      outline-offset: 2px;
+    }
+  }
+
+  .btn-container{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    p{
+      font-weight: 900;
+      font-size: 1.3rem;
+    }
+  }
+  .result-btn{
+    text-decoration: none;
+    margin-top: 0.6rem;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5em;
+    padding: 0.6em 1.2em;
+
+    color: white;
+    background-color: #7B9BCC;
+
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1.3rem;
     text-align: center;
     cursor: pointer;
     border: none;

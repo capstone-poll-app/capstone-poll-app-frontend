@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import Navbar from "../components/Navbar";
+import PollCard from "../components/PollCard";
 
 //react function to display poll
 
@@ -72,33 +73,7 @@ function Poll() {
       <div className="app">
         <Navbar />
         <h1>Poll</h1>
-
-        <section className="poll-card">
-          {error && <p className="error">{error}</p>}
-
-          <h2>{poll.title}</h2>
-          {poll.description && <p>{poll.description}</p>}
-          <ul>
-            {poll.Options.map((option) => (
-              <ul className="vote-option" key={option.id}>
-                <label>
-                  <input
-                    type="radio"
-                    name="pollOption"
-                    value={option.id}
-                    checked={selectedOption === option.id}
-                    onChange={() => {
-                      setSelectedOption(option.id);
-                      setError("");
-                    }}
-                  />
-                  {option.text}
-                </label>
-              </ul>
-            ))}
-          </ul>
-          <button type="submit" className="vote-btn" onClick={handleVote}>Vote</button>
-        </section>
+        <PollCard poll={poll} onVote={handleVote} id={id}></PollCard>
       </div>
     </>
   );
