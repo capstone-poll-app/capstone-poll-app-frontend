@@ -20,7 +20,9 @@ function SharePoll () {
        />
         </div>
 
-       <button onClick={() => navigator.clipboard.writeText(shareLink)}>
+       <button onClick={() => {navigator.clipboard.writeText(shareLink);
+                alert("Link Copied.");
+       }}>
         Copy Link
        </button>
 
