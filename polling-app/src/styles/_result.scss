@@ -1,0 +1,73 @@
+.result-card {
+  background-color: #1f487e;
+  border: 1px solid #7b9bcc;
+  border-radius: 6px;
+  padding: 2rem;
+  min-width: 300px;
+  width: 90%;              /* NEW — lets it scale with viewport width */
+  max-width: 800px;        /* NEW — caps it on large screens */
+  min-height: 600px;
+  margin: 2rem auto;
+
+  flex: 1;
+
+  ol{
+    list-style: none;
+  }
+
+  .optn-container{
+    display: flex;
+    flex-direction: column-reverse;
+
+    height: 100%;
+    align-items: center;
+  }
+
+  .optn-text{
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+
+  .bar-chart {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    height: 70vh;           /* CHANGED from 550px — scales with viewport height */
+    max-height: 550px;      /* NEW — keeps it from getting too tall on big screens */
+    background-color: #7b9bcc;
+  }
+
+  .bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.1rem;
+
+    width: 3rem;
+  }
+
+  .unit {
+    flex: 1;
+    min-height: 1px;        /* FIXED — "1" isn't a valid CSS length */
+    width: 100%;
+    background-color: #1f487e;
+
+    &:hover{
+      background-color: aliceblue;
+    }
+  }
+}
+
+.result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100vw;
+}
+
+.win-text{
+    padding-top: 30px;
+}
