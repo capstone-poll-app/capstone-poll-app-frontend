@@ -8,10 +8,58 @@
         margin: 0 auto;
     }
 
+    .filter-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: .5rem;
+
+        .filter-btn{
+            text-decoration: none;
+            border: 0;
+            padding: 0;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 0.5em;
+            padding: 0.6em 1.2em;
+
+            color: white;
+            background-color: #ad84c4;
+
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 1rem;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            transform: translateY(1px);
+            &:hover {
+                background-color: #C4B7CB;
+                text-decoration: none;
+                color: #1F487E;
+            }
+
+            &:active {
+                transform: scale(0.98);
+            }
+
+            &:focus-visible {
+                outline: 2px solid #93c5fd;
+                outline-offset: 2px;
+            }
+        }
+    }
+
     .poll-list{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         gap: 1.5rem;
+    
 
         padding: 2rem;
     }
@@ -20,6 +68,7 @@
         display: flex;
         flex-direction: column;
         gap: .5rem;
+  
 
         align-items: center;
         justify-content: center;
