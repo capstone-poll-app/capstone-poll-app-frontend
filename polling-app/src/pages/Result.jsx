@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 function Results() {
   const { id } = useParams();
   const [poll, setPoll] = useState({});
-//   const [options, setOptions] = useState(null);
+  //   const [options, setOptions] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -27,44 +27,56 @@ function Results() {
     }
   };
 
-
   useEffect(() => {
     fetchPoll();
   }, [id]);
 
+  function createContent(options) {
+    const maxVotes = Math.max(...options.map((o) => o.Votes.length), 1);
+    return (
+      <section className="result-card">
+        <ol className="bar-chart">
+          {options.map((option) => {
+            const percent = (option.Votes.length / maxVotes) * 100; // largest = 100%, rest scaled relative to it
 
-  function createContent(options){
-    return(
-        <>
-            <ol className="bar-chart">
-              {options.map((option)=>(
-                <li className="bar">{option.text}
-                  <p>{option.Votes.length}</p>
+            return (
+              <section className="optn-container" key={option.id}>
+                <p className="optn-text">{option.text}</p>
+                <li className="bar" style={{ height: `${percent}%` }}>
+                  {option.Votes.map((Vote) => (
+                    <div key={Vote.id} className="unit"></div>
+                  ))}
                 </li>
-              ))}
-                
-            </ol>
-        </>
-    )
+                <p>{option.Votes.length}</p>
+              </section>
+            );
+          })}
+        </ol>
+      </section>
+    );
   }
 
-  
   let content;
+  let winner;
 
   if (loading) {
     return <p>Loading results...</p>;
   } else if (error) {
     return <p className="error">Error: {error}</p>;
-  }else if(poll){
-    content = createContent(poll.Options)
+  } else if (poll) {
+    content = createContent(poll.Options);
+    const maxVotes = Math.max(...poll.Options.map((o) => o.Votes.length), 1);
+    winner = poll.Options.find((option) => option.Votes.length === maxVotes);
   }
-
-
 
   return (
     <div className="app">
       <Navbar />
-      <section className="card">{content}</section>
+      <span className="result">
+        <h1 className="win-text">{poll.title}</h1>
+        <h2 className="win-text">The Winner is: {winner.text}</h2>
+        <>{content}</>
+      </span>
     </div>
   );
 }
