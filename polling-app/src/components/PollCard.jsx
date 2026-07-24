@@ -6,12 +6,13 @@ function PollCard({ poll, onVote, id }) {
   const [error, setError] = useState("");
 
   const handleVote = () => {
+    console.log("handle-vte fires")
     if (!selectedOption) {
       setError("Please select an option before voting.");
       return;
     }
     setError("");
-    onVote(selectedOption);
+    onVote(id, selectedOption);
   };
 
   let button;
@@ -43,6 +44,7 @@ function PollCard({ poll, onVote, id }) {
                 value={option.id}
                 checked={selectedOption === option.id}
                 onChange={() => {
+                  console.log("selected: ", option.id )
                   setSelectedOption(option.id);
                   setError("");
                 }}
