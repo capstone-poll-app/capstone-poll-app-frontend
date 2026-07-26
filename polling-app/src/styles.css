@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -16,6 +17,10 @@
 .nav .nav-item {
   text-decoration: none;
   color: white;
+}
+
+.logo {
+  width: 40px;
 }
 
 .link-button {
@@ -268,6 +273,9 @@
   color: #C9D6EA;
   opacity: 0.85;
 }
+.poll-card ul {
+  list-style: none;
+}
 .poll-card .vote-option {
   border: 1px solid #7B9BCC;
   border-radius: 6px;
@@ -329,4 +337,153 @@
 .poll-card .vote-btn:focus-visible {
   outline: 2px solid #93c5fd;
   outline-offset: 2px;
+}
+.poll-card .btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.poll-card .btn-container p {
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+.poll-card .result-btn {
+  text-decoration: none;
+  margin-top: 0.6rem;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.6em 1.2em;
+  color: white;
+  background-color: #7B9BCC;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1.3rem;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.poll-card .result-btn:hover {
+  background-color: #C4B7CB;
+  color: #1F487E;
+}
+.poll-card .result-btn:active {
+  transform: scale(0.98);
+}
+.poll-card .result-btn:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.app {
+  background-color: #C9D6EA;
+  min-height: 100vh;
+}
+
+h1 {
+  padding-top: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.link-container {
+  background-color: #1F487E;
+  border: 1px solid #7B9BCC;
+  border-radius: 10px;
+  padding: 70px;
+  max-width: 600px;
+  margin: 25px auto;
+  text-align: center;
+  height: 300px;
+}
+
+.link-container input {
+  width: 60%;
+  margin-bottom: 20px;
+  height: 50px;
+  background-color: #b6ccd5;
+}
+
+.link-container button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #4f46e5;
+  color: white;
+  font-size: 16px;
+  gap: 15px;
+}
+
+.link-container button:hover {
+  background: #462042;
+}
+
+.result-card {
+  background-color: #1f487e;
+  border: 1px solid #7b9bcc;
+  border-radius: 6px;
+  padding: 2rem;
+  min-width: 300px;
+  width: 90%; /* NEW — lets it scale with viewport width */
+  max-width: 800px; /* NEW — caps it on large screens */
+  min-height: 600px;
+  margin: 2rem auto;
+  flex: 1;
+}
+.result-card ol {
+  list-style: none;
+}
+.result-card .optn-container {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+  align-items: center;
+}
+.result-card .optn-text {
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+.result-card .bar-chart {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  height: 70vh; /* CHANGED from 550px — scales with viewport height */
+  max-height: 550px; /* NEW — keeps it from getting too tall on big screens */
+  background-color: #7b9bcc;
+}
+.result-card .bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.1rem;
+  width: 3rem;
+}
+.result-card .unit {
+  flex: 1;
+  min-height: 1px; /* FIXED — "1" isn't a valid CSS length */
+  width: 100%;
+  background-color: #1f487e;
+}
+.result-card .unit:hover {
+  background-color: aliceblue;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+.win-text {
+  padding-top: 30px;
 }/*# sourceMappingURL=styles.css.map */
